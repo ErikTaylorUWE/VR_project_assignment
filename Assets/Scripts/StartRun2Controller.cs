@@ -11,6 +11,7 @@ public class StartRun2Controller : MonoBehaviour
     {
         if (other.tag == "Torch")
         {
+            Debug.Log("Entered Trigger");
             animator.SetBool("StartSecondRun", true);
             //audio.Play();
         }
