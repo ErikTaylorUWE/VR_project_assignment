@@ -21,8 +21,8 @@ public class EmissionMaterialGlassTorchFadeOut : MonoBehaviour
 
         GameObject _torchLight = GameObject.Find("Torch Light");
 
-        if (_torchLight != null) {_torchOnOff = _torchLight.GetComponent<ElectricTorchOnOff>();}
-        if (_torchLight == null) {Debug.Log("Cannot find 'ElectricTorchOnOff' script");}
+        if (_torchLight != null) { _torchOnOff = _torchLight.GetComponent<ElectricTorchOnOff>(); }
+        if (_torchLight == null) { Debug.Log("Cannot find 'ElectricTorchOnOff' script"); }
 
         _intensity = _torchOnOff.intensityLight;
     }
@@ -45,7 +45,7 @@ public class EmissionMaterialGlassTorchFadeOut : MonoBehaviour
     public void OffEmission()
     {
         _mat.material.SetColor("_EmissionColor", _alphaStart * Color.black);
-    }    
+    }
     public void OnEmission()
     {
         _mat.material.SetColor("_EmissionColor", _alphaStart * _intensity);
