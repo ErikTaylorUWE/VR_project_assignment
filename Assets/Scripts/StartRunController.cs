@@ -5,9 +5,15 @@ using UnityEngine;
 public class StartRunController : MonoBehaviour
 {
     public Animator animator;
+    public AudioSource audio;
 
-    public void StartRunAnimation()
+    private void OnTriggerEnter(Collider other)
     {
-        animator.SetBool("StartRun", true);
+        if (other.tag == "Torch")
+        {
+            animator.SetBool("StartRun", true);
+            audio.Play();
+        }
+
     }
 }
